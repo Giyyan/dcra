@@ -1,5 +1,9 @@
 import os
 from os.path import basename
+import djcelery
+
+os.environ["CELERY_LOADER"] = "django"
+djcelery.setup_loader()
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SITE_NAME = basename(BASE_DIR)
@@ -47,7 +51,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-
+    'dcra.apps.posts',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -123,6 +127,18 @@ TEMPLATE_LOADERS = (
     )),
 )
 ########## END TEMPLATE CONFIGURATION
+
+
+########## CELERY CONFIGURATION
+BROKER_URL = 'amqp://giyyan:vjq1gfhjkm@127.0.0.1:5672/dcra'
+
+CELERY_RESULT_BACKEND = "amqp"
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']  # Ignore other content
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Europe/Kiev'
+CELERY_ENABLE_UTC = True
+########## END CELERY CONFIGURATION
 
 
 ########## LOGGING CONFIGURATION

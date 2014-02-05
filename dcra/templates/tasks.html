@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html ng-app="Task">
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="TaskCtrl as app">
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>Task id</td>
+        <td>State</td>
+    </tr>
+    </thead>
+    <tbody ng-repeat="task in app.tasks">
+    <tr>
+        <td>{$ task.task_id $}</td>
+        <td><span class="label {$ task.label $}">{$ task.state $}</span></td>
+    </tr>
+    </tbody>
+
+</table>
+
+<script src="{% static 'bower_components/angular/angular.js' %}"></script>
+<script src="{% static 'bower_components/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

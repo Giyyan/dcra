@@ -46,3 +46,7 @@ docs/_build/
 
 # PyCharm files
 .idea/
+
+# Celery
+celery*
+djcelery*

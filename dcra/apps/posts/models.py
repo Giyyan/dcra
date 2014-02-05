@@ -1,3 +1,15 @@
 from django.db import models
+from tasks import mul
 
-# Create your models here.
+
+class Post(models.Model):
+    title = models.TextField()
+
+    def save(self, *args, **kwargs):
+        super(Post, self).save(*args, **kwargs)
+        result = mul.delay(1, 4)
+        if result.status != 'SUCCESS':
+            print result.result
+
+    def __unicode__(self):
+        return self.title

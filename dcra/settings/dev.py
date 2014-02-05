@@ -19,7 +19,7 @@ INSTALLED_APPS += (
 )
 
 ########## DEBUG-TOOLBAR CONFIGURATION
-INTERNAL_IPS = ('192.168.103.35',)
+INTERNAL_IPS = ('127.0.0.1',)
 
 MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -42,12 +42,3 @@ DEBUG_TOOLBAR_CONFIG = {
 #     'debug_toolbar.panels.logger.LoggingPanel',
 # )
 ########## END DEBUG-TOOLBAR CONFIGURATION
-
-
-########## END BROKER CONFIGURATION
-BROKER_HOST = "localhost"
-BROKER_PORT = 5672
-BROKER_USER = "giyyan"
-BROKER_PASSWORD = "vjq1gfhjkm"
-BROKER_VHOST = "dcra"
-########## END BROKER CONFIGURATION
