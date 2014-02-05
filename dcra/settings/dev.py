@@ -42,3 +42,12 @@ DEBUG_TOOLBAR_CONFIG = {
 #     'debug_toolbar.panels.logger.LoggingPanel',
 # )
 ########## END DEBUG-TOOLBAR CONFIGURATION
+
+
+########## END BROKER CONFIGURATION
+BROKER_HOST = "localhost"
+BROKER_PORT = 5672
+BROKER_USER = "giyyan"
+BROKER_PASSWORD = "vjq1gfhjkm"
+BROKER_VHOST = "dcra"
+########## END BROKER CONFIGURATION
