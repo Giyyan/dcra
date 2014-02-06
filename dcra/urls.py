@@ -10,8 +10,8 @@ task_resource = TaskResource()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', TemplateView.as_view(template_name='tasks.html')),
-    # url(r'^$', TasksView.as_view()),
+    # url(r'^$', TemplateView.as_view(template_name='tasks.html')),
+    url(r'^$', TasksView.as_view()),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(task_resource.urls)),
 )

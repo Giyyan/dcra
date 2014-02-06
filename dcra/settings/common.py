@@ -2,7 +2,6 @@ import os
 from os.path import basename
 import djcelery
 
-os.environ["CELERY_LOADER"] = "django"
 djcelery.setup_loader()
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
