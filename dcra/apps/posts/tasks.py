@@ -1,6 +1,5 @@
+import random
 from celery import shared_task
-from celery.task import periodic_task
-from datetime import timedelta
 from time import sleep
 
 
@@ -11,7 +10,7 @@ def add(x, y):
 
 @shared_task
 def mul(x, y):
-    sleep(60)
+    sleep(60 * random.random())
     result = x * y
 
     return result

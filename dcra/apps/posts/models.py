@@ -1,5 +1,5 @@
 from django.db import models
-from tasks import mul
+from .tasks import mul
 
 
 class Post(models.Model):
@@ -9,5 +9,5 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
         result = mul.delay(1, 4)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title

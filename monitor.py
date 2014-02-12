@@ -10,7 +10,7 @@ def my_monitor(app):
     state = app.events.State()
 
     def on_event(event):
-        print "EVENT HAPPENED: ", event
+        print("EVENT HAPPENED: ", event)
 
     with app.connection() as connection:
         recv = app.events.Receiver(connection, handlers={

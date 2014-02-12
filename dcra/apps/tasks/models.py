@@ -2,5 +2,8 @@
 from django.db import models
 
 
-class Task(models.Model):
-    pass
+class Worker(models.Model):
+    hostname = models.CharField()
+
+    class Meta:
+        managed = False

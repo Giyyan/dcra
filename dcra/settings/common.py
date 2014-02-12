@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = (
 
 LOCAL_APPS = (
     'dcra.apps.posts',
+    # 'dcra.apps.tasks',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -137,6 +138,8 @@ CELERY_ACCEPT_CONTENT = ['json']  # Ignore other content
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Europe/Kiev'
 CELERY_ENABLE_UTC = True
+
+CELERYBEAT_SCHEDULER = "djcelery.schedulers.DatabaseScheduler"
 ########## END CELERY CONFIGURATION
 
 
